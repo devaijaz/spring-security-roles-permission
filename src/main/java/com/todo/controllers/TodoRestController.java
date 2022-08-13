@@ -20,36 +20,40 @@ import com.todo.services.TodoService;
 @RestController
 @RequestMapping("/api/v1/todo")
 public class TodoRestController {
-	
-	@Autowired
-	private TodoService service;
-	
-	@GetMapping
-	public List<Todo> getAll() {
-		return service.getAllTodos();
-	}
-	
-	@GetMapping("{id}")
-	//@PreAuthorize(value = "hasRole('ADMIN') or hasAuthority('read:permission')")
-	public Todo getById(@PathVariable("id") Integer id) {
-		return this.service.getById(id);
-	}
-	
-	@PostMapping
-	//@PreAuthorize(value = "hasRole('ADMIN') or hasAuthority('create:permission')")
-	public Todo create(@RequestBody TodoCreateRequest request) {
-		System.out.println(request);
-		return this.service.createTodo(request);
-	}
-	@DeleteMapping("{id}")
-	//@PreAuthorize(value = "hasRole('ADMIN') or hasAuthority('delete:permission')")
-	public void delete(@PathVariable("id") Integer id) {
-		this.service.deleteTodo(id);
-	}
-	
-	@PutMapping("{id}")
-	//@PreAuthorize(value = "hasRole('ADMIN') or hasAuthority('update:permission')")
-	public Todo update(@PathVariable("id") Integer id, @RequestBody TodoUpdateRequest request) {
-		return this.service.updateTodo(id, request);
-	}
+
+  @Autowired
+  private TodoService service;
+
+  @GetMapping
+  public List<Todo> getAll() {
+    return service.getAllTodos();
+  }
+
+  @GetMapping("{id}")
+  // @PreAuthorize(value = "hasRole('ADMIN') or hasAuthority('read:permission')")
+  public Todo getById(@PathVariable("id") Integer id) {
+    return this.service.getById(id);
+  }
+
+  @PostMapping
+  // @PreAuthorize(value = "hasRole('ADMIN') or
+  // hasAuthority('create:permission')")
+  public Todo create(@RequestBody TodoCreateRequest request) {
+    System.out.println(request);
+    return this.service.createTodo(request);
+  }
+
+  @DeleteMapping("{id}")
+  // @PreAuthorize(value = "hasRole('ADMIN') or
+  // hasAuthority('delete:permission')")
+  public void delete(@PathVariable("id") Integer id) {
+    this.service.deleteTodo(id);
+  }
+
+  @PutMapping("{id}")
+  // @PreAuthorize(value = "hasRole('ADMIN') or
+  // hasAuthority('update:permission')")
+  public Todo update(@PathVariable("id") Integer id, @RequestBody TodoUpdateRequest request) {
+    return this.service.updateTodo(id, request);
+  }
 }

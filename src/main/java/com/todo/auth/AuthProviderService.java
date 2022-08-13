@@ -4,5 +4,5 @@ import java.util.Optional;
 
 public interface AuthProviderService {
 
-	Optional<UserDetail> getUserByUsername(String username);
+  Optional<UserDetail> getUserByUsername(String username);
 }

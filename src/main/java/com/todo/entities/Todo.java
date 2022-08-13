@@ -8,38 +8,38 @@ import javax.persistence.Id;
 
 @Entity
 public class Todo {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
-	
-	@Column
-	private String title;
-	
-	@Column
-	private boolean completed;
 
-	public Integer getId() {
-		return id;
-	}
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private Integer id;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+  @Column
+  private String title;
 
-	public String getTitle() {
-		return title;
-	}
+  @Column
+  private boolean completed;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+  public Integer getId() {
+    return id;
+  }
 
-	public boolean isCompleted() {
-		return completed;
-	}
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-	public void setCompleted(boolean completed) {
-		this.completed = completed;
-	}
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public boolean isCompleted() {
+    return completed;
+  }
+
+  public void setCompleted(boolean completed) {
+    this.completed = completed;
+  }
 }

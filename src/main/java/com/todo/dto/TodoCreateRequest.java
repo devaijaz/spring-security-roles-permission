@@ -1,23 +1,22 @@
 package com.todo.dto;
 
 public class TodoCreateRequest {
-	private String title;
-	
-	public TodoCreateRequest() {
-	}
+  private String title;
 
-	public TodoCreateRequest(String title) {
-		super();
-		this.title = title;
-	}
+  public TodoCreateRequest() {
+  }
 
-	public String getTitle() {
-		return title;
-	}
+  public TodoCreateRequest(String title) {
+    super();
+    this.title = title;
+  }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	
-	
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
 }
